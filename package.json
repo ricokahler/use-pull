@@ -1,7 +1,7 @@
 {
   "name": "use-pull",
   "version": "0.1.0",
-  "description": "A hook that preserves object references when values are deep equal to the previous render",
+  "description": "`usePull` is a hook that will wrap a value with a ref and return a memoized callback that pulls the latest version of that value.",
   "main": "index.js",
   "scripts": {
     "test": "eslint src && jest --coverage --coverageReporters=text-lcov | coveralls",
