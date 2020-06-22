@@ -52,7 +52,6 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-test-renderer": "^16.10.2",
-    "redux": "^4.0.1",
     "rollup": "^2.18.0",
     "typescript": "^3.5.2"
   },
