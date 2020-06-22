@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { create, act } from 'react-test-renderer';
 import usePull from './index';
 
-const delay = () => new Promise(resolve => setTimeout(resolve, 10));
+const delay = () => new Promise((resolve) => setTimeout(resolve, 10));
 
 function createDeferredPromise() {
   let resolve!: () => void;
@@ -32,11 +32,11 @@ it('wraps values in refs and allows pull based extraction (purposefully removing
 
     useEffect(() => {
       (async () => {
-        setCount(count => count + 1);
+        setCount((count) => count + 1);
         await delay();
-        setCount(count => count + 1);
+        setCount((count) => count + 1);
         await delay();
-        setCount(count => count + 1);
+        setCount((count) => count + 1);
         await delay();
         done.resolve();
       })();
