@@ -1,6 +1,6 @@
 {
   "name": "use-pull",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "`usePull` is a hook that will wrap a value with a ref and return a memoized callback that pulls the latest version of that value.",
   "keywords": [
