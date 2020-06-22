@@ -1,4 +1,4 @@
-# usePull · [![Build Status](https://travis-ci.org/ricokahler/use-pull.svg?branch=master)](https://travis-ci.org/ricokahler/use-pull) [![Coverage Status](https://coveralls.io/repos/github/ricokahler/use-pull/badge.svg?branch=master)](https://coveralls.io/github/ricokahler/use-pull?branch=master)
+# usePull · [![codecov](https://codecov.io/gh/ricokahler/use-pull/branch/master/graph/badge.svg)](https://codecov.io/gh/ricokahler/use-pull)
 
 > `usePull` is a hook that will wrap a value with a ref and return a memoized callback that pulls the latest version of that value.
 
