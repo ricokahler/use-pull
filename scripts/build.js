@@ -46,7 +46,7 @@ async function createPackageJson() {
   };
 
   await writeFile(
-    path.resolve(root, './build/package.json'),
+    path.resolve(root, './dist/package.json'),
     JSON.stringify(minimalPackage, null, 2),
   );
 }
@@ -74,7 +74,7 @@ async function build() {
 
   console.log('Copying README.md…');
   const readme = await readFile(path.resolve(root, './README.md'));
-  await writeFile(path.resolve(root, './build/README.md'), readme);
+  await writeFile(path.resolve(root, './dist/README.md'), readme);
 
   console.log('Done building!');
 }
