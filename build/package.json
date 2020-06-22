@@ -1,0 +1,27 @@
+{
+  "author": "Rico Kahler",
+  "version": "0.1.0",
+  "description": "`usePull` is a hook that will wrap a value with a ref and return a memoized callback that pulls the latest version of that value.",
+  "keywords": [
+    "react",
+    "react-hooks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricokahler/use-pull.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ricokahler/use-pull/issues"
+  },
+  "homepage": "https://github.com/ricokahler/use-pull#readme",
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "dependencies": {
+    "@types/jest": "^26.0.0",
+    "object-hash": "^2.0.0"
+  },
+  "name": "use-pull",
+  "main": "index.js"
+}

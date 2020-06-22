@@ -1,34 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { create, act } from 'react-test-renderer';
-import usePull from './usePull';
+import usePull from './index';
 import delay from 'delay';
 
-class DeferredPromise {
-  constructor() {
-    this.state = 'pending';
-    this._promise = new Promise((resolve, reject) => {
-      this.resolve = value => {
-        this.state = 'fulfilled';
-        resolve(value);
-      };
-      this.reject = reason => {
-        this.state = 'rejected';
-        reject(reason);
-      };
-    });
+function createDeferredPromise() {
+  let resolve!: () => void;
+  let reject!: () => void;
 
-    this.then = this._promise.then.bind(this._promise);
-    this.catch = this._promise.catch.bind(this._promise);
-    this.finally = this._promise.finally.bind(this._promise);
-  }
+  const promise = new Promise((thisResolve, thisReject) => {
+    resolve = thisResolve;
+    reject = thisReject;
+  });
 
-  [Symbol.toStringTag] = 'Promise';
+  return Object.assign(promise, { resolve, reject });
 }
 
 it('wraps values in refs and allows pull based extraction (purposefully removing reactivity)', async () => {
   const wrappedCountHandler = jest.fn();
   const normalCountHandler = jest.fn();
-  const done = new DeferredPromise();
+  const done = createDeferredPromise();
 
   function ExampleComponent() {
     const [count, setCount] = useState(0);

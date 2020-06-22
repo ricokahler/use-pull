@@ -53,19 +53,21 @@ async function createPackageJson() {
 
 async function build() {
   if (!args.includes('--no-clean')) {
-    console.log('Cleaning…');
-    await execute('rm -rf node_modules build && npm i');
-    await execute('mkdir build');
+    console.log('(re)Installing…');
+    await execute('npm i');
   }
 
-  console.log('Copying typings (rsync)…');
-  await execute('rsync -r --include "*.d.ts" --include "*/" --exclude="*" --quiet ./src/* ./build');
+  console.log('Linting…');
+  await execute('npm run lint');
 
-  console.log('Checking Types (tsc)…');
+  console.log('Running tests…');
+  await execute('npx jest');
+
+  console.log('Writing Types (tsc)…');
   await execute('npx tsc');
 
-  console.log('Compiling (webpack)…');
-  await execute('npx webpack -p');
+  console.log('Compiling (rollup)…');
+  await execute('npx rollup -c');
 
   console.log('Writing package.json…');
   await createPackageJson();
