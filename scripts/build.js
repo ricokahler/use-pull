@@ -42,7 +42,8 @@ async function createPackageJson() {
     peerDependencies: packageJson.peerDependencies,
     dependencies: packageJson.dependencies,
     name: packageJson.name,
-    main: packageJson.main,
+    main: 'index.js',
+    module: 'index.esm.js',
   };
 
   await writeFile(
