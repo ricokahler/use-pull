@@ -11,6 +11,9 @@ npm install --save use-pull
 ## Usage
 
 ```js
+import React from 'react';
+import usePull from 'use-pull';
+
 function ExampleComponent({ id }) {
   const value = /* ... */;
 
